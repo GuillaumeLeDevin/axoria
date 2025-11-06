@@ -208,7 +208,7 @@ export async function editPost(formData){
         // Upload new image
         const imageToUploadFileName = `${crypto.randomUUID()}_${coverImage.name}`
         const imageToUploadUrl = `${process.env.BUNNY_STORAGE_HOST}/${process.env.BUNNY_STORAGE_ZONE}/${imageToUploadFileName}`
-        const imageToUploadPublicUrl = `https://pull-zone-axoriablog.b-cdn.net/${imageToUploadUrl}`
+        const imageToUploadPublicUrl = `https://axoriablog.b-cdn.net/${imageToUploadUrl}`
 
 
         const imageToUploadResponse = await fetch(imageToUploadUrl, {
