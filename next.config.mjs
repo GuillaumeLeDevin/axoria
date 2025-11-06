@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['axoria-blog-educ.b-cdn.net'],
     remotePatterns: [
       {
         protocol: 'https',

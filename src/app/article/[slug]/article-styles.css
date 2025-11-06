@@ -6,6 +6,11 @@
 .article-styles li {
     font-size: 18px;
 }
+.article-styles {
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+}
 .article-styles p {
     margin-bottom: 8px;
 }

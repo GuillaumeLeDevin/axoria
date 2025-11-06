@@ -1,14 +1,12 @@
 "use client"
-import React from 'react'
-import Link from 'next/link'
-import NavbarDropdown from './NavbarDropdown'
-import { useAuth } from '@/app/AuthContext'
-import Image from 'next/image'
+import Link from "next/link"
+import NavbarDropdown from "./NavbarDropdown"
+import { useAuth } from "@/app/AuthContext"
+import Image from "next/image"
 
 export default function Navbar() {
-
-    const { isAuthenticated } = useAuth()
-
+  const { isAuthenticated } = useAuth()
+    
   return (
     <nav className='fixed z-10 w-full bg-slate-50 border-b border-b-zinc-300'>
         <div className='u-main-container flex py-4 gap-1'>

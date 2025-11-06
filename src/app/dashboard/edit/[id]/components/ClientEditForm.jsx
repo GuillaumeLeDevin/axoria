@@ -40,14 +40,17 @@ export default function ClientEditForm({post}) {
 
         try {
             const result = await editPost(formData)
+
             if(result.success) {
                 submitButtonRef.current.textContent = "Post updated! ✅"
 
                 let countdown = 3
                 serverValidationText.current.textContent = `Redirecting in ${countdown}`
+
                 const intervalId = setInterval(() => {
                     countdown--
                     serverValidationText.current.textContent = `Redirecting in ${countdown}`
+
                     if(countdown === 0) {
                         clearInterval(intervalId)
                         router.push(`/article/${result.slug}`)
@@ -61,8 +64,7 @@ export default function ClientEditForm({post}) {
         }
     }
 
-    function handleAddTag(e) {
-        e.preventDefault()
+    function handleAddTag() {
         const newTag = tagInputRef.current.value.trim().toLowerCase()
 
         if(newTag !== "" && !tags.includes(newTag) && tags.length <= 4) {
@@ -88,11 +90,10 @@ export default function ClientEditForm({post}) {
         const validImageTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"]
 
         if(!validImageTypes.includes(file.type)) {
-            e.target.value = ""
             imgUploadValidationText.current.textContent = "Please upload a valid image type (jpg, jpeg, png, or webp)"
+            e.target.value = ""
             return
-        }
-        else {
+        } else {
             imgUploadValidationText.current.textContent = ""
         }
 

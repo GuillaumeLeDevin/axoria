@@ -1,27 +1,24 @@
 "use client"
-import React from 'react'
-import { useRef } from 'react'
-import { login } from '@/lib/serverActions/session/sessionServerActions'
-import { useRouter } from 'next/navigation'
-import { useAuth } from '@/app/AuthContext'
+import { useRef } from "react"
+import { login } from "@/lib/serverActions/session/sessionServerActions"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/app/AuthContext"
 
 export default function page() {
-
   const { setIsAuthenticated } = useAuth()
-  const serverInfoRef = useRef(null)
-  const submitButtonRef = useRef(null)
+  const serverInfoRef = useRef()
+  const submitButtonRef = useRef()
 
   const router = useRouter()
-  
 
-  async function handleSubmit(event) {
+  async function handleSubmit(e) {
     event.preventDefault()
     serverInfoRef.current.textContent = ""
     submitButtonRef.current.disabled = true
     submitButtonRef.current.textContent = "Loading..."
 
     try {
-        const result = await login(new FormData(event.target))
+        const result = await login(new FormData(e.target))
         console.log(result)
         if(result.success) {
           setIsAuthenticated({loading: false, isConnected: true, userId: result.userId})
