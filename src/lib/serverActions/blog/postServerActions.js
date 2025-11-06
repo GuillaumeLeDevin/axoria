@@ -226,7 +226,6 @@ export async function editPost(formData){
         updatedData.coverImageUrl = imageToUploadPublicUrl
         }
 
-
         // Tags management
         if( typeof tags !== "string") {
             throw new AppError("Invalid tag data")
