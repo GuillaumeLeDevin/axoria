@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f1f1f1;
+}
+
+/* Utils classes */
+
+/* Layout classes */
+.u-main-container {
+  @apply max-w-6xl mx-auto px-12;
+}
+.u-padding-content-container {
+  @apply pt-32 pb-44;
+}
+.u-articles-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 mt-4 mb-12
+  list-none;
+}
+
+/* Typography classes */
+.t-main-title {
+  @apply font-inter font-bold text-zinc-900 text-4xl mb-2;
+}
+.t-main-subtitle {
+  @apply mb-12 text-zinc-700;
+}
+
+/* Form classes */
+.f-label {
+  @apply block /* mb-2 */ font-semibold text-gray-700;
+}
+.f-auth-input {
+  @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight mb-5 focus:outline-slate-400
+}
+.f-button-valid {
+  @apply w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded border-none;
+}
+
+.info-message {
+  display: inline-block;
+  padding: 0px 10px 0px 0px;
+  visibility: hidden;
+  color: red;
+  transition: visibility 0.3s;
+}
+.info-icon:hover + .info-message {
+  visibility: visible;
+}
+
+a {
+  cursor: pointer;
+  @apply hover:underline;
+}

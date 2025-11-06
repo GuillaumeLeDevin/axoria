@@ -1,0 +1,7 @@
+input[type="file"] {
+    pointer-events: none;
+}
+input[type="file"]::file-selector-button {
+    cursor: pointer;
+    pointer-events: all;
+}
