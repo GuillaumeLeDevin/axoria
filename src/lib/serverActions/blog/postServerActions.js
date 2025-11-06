@@ -54,9 +54,7 @@ export async function addPost(formData){
         }
 
         const imageBuffer = Buffer.from(await coverImage.arrayBuffer())
-
         const { width, height } = await sharp(imageBuffer).metadata()
-
         if(width > 1280 || height > 720) {
             throw new AppError("Invalid image dimensions")
         }
@@ -156,6 +154,7 @@ export async function editPost(formData){
     const postToEdit = JSON.parse(postToEditStringified)
 
     try {
+
         await connectToDB()
 
         const session = await sessionInfo()
@@ -208,7 +207,7 @@ export async function editPost(formData){
         // Upload new image
         const imageToUploadFileName = `${crypto.randomUUID()}_${coverImage.name}`
         const imageToUploadUrl = `${process.env.BUNNY_STORAGE_HOST}/${process.env.BUNNY_STORAGE_ZONE}/${imageToUploadFileName}`
-        const imageToUploadPublicUrl = `https://axoriablog.b-cdn.net/${imageToUploadUrl}`
+        const imageToUploadPublicUrl = `https://axoria-blog-educ.b-cdn.net/${imageToUploadFileName}`
 
 
         const imageToUploadResponse = await fetch(imageToUploadUrl, {
@@ -226,6 +225,7 @@ export async function editPost(formData){
 
         updatedData.coverImageUrl = imageToUploadPublicUrl
         }
+
 
         // Tags management
         if( typeof tags !== "string") {
