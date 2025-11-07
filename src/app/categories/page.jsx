@@ -4,7 +4,7 @@ import React from 'react'
 
 export const revalidate = 60 // Revalidate this page every 60 seconds
 
-export default async function page() {
+export default async function Page() {
 
     const tags = await getTags()
 

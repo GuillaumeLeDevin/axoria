@@ -4,7 +4,7 @@ import BlogCard from '@/components/BlogCard';
 
 export const revalidate = 60 // Revalidate this page every 60 seconds
 
-export default async function page({params}) {
+export default async function Page({params}) {
     const {tag} = await params
     const posts = await getPostsByTag(tag)
     console.log("post from tag:", posts)

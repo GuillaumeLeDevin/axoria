@@ -3,7 +3,7 @@ import React from 'react'
 import Link from "next/link"
 import "./error.scss"
 
-export default function error() {
+export default function Error() {
   return (
     <div className='pt-44 bg-white'>
         <h1 className='text-4xl text-center mb-4'>Something went wrong</h1>

@@ -5,7 +5,7 @@ import 'prism-themes/themes/prism-vsc-dark-plus.css'
 import Image from 'next/image'
 import notFound from '@/app/not-found'
 
-export default async function page({params}) {
+export default async function Page({params}) {
     const {slug} = await params
     const post = await getPost(slug)
     console.log("This is the posts from Article:",post)

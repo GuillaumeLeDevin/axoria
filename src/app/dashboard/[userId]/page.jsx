@@ -4,7 +4,7 @@ import { getPost } from '@/lib/serverMethods/blog/postMethods'
 import { getUserPostsFromUserID } from '@/lib/serverMethods/blog/postMethods'
 import DeletePostButton from './components/DeletePostButton'
 
-export default async function page({ params }) {
+export default async function Page({ params }) {
 
   const { userId } = await params
 

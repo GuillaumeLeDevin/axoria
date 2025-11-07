@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import "./error.scss"
 
-export default function notFound() {
+export default function NotFound() {
   return (
     <div className='pt-44 bg-white'>
         <h1 className='text-4xl text-center mb-4'>404 - Page Not Found</h1>

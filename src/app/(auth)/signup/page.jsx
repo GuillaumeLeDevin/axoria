@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { register } from '@/lib/serverActions/session/sessionServerActions'
 import { useRouter } from 'next/navigation'
 
-export default function page() {
+export default function Page() {
 
     const serverInfoRef = useRef(null)
     const submitButtonRef = useRef(null)
